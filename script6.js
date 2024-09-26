@@ -1,3 +1,22 @@
+const jsAnimaisLista = document.querySelectorAll('.js-animais-lista li');
+const jsAnimaisDescricao = document.querySelectorAll('.js-animais-descricao section');
+
+if(jsAnimaisLista.length && jsAnimaisDescricao.length){
+  jsAnimaisDescricao[0].classList.add('ativo');
+
+  function ativarClasse (item){
+    jsAnimaisDescricao.forEach((item) => {
+      item.classList.remove('ativo');
+    })
+    jsAnimaisDescricao[item].classList.add('ativo');
+  }
+
+  jsAnimaisLista.forEach((itemMenu, index)=>{
+    itemMenu.addEventListener('click',()=>{
+      ativarClasse(index);
+    })
+  })
+}
 function accordionFunction (){
   const accordionList = document.querySelectorAll('.accordionList dt');
 
@@ -16,3 +35,4 @@ function accordionFunction (){
   );
 }
 accordionFunction();
+
