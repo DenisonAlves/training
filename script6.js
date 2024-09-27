@@ -36,3 +36,22 @@ function accordionFunction (){
 }
 accordionFunction();
 
+
+
+const menuItens = document.querySelectorAll(".js-menu a[href^='#']");
+
+function rolagemMenu(event){
+  event.preventDefault();
+  const href = event.currentTarget.getAttribute('href');
+  const selector = document.querySelector(href);
+  console.log(selector)
+
+  selector.scrollIntoView({
+    block: 'start',
+    behavior: 'smooth',
+  });
+}
+
+menuItens.forEach((item) =>{
+  item.addEventListener("click", rolagemMenu);
+})
